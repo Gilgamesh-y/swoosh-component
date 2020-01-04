@@ -21,7 +21,20 @@
     },
     "autoload": {
       "psr-4": {
-        "Src\\": "src/framework/src/"
+        "Src\\": "src/framework/src/",
+        "Src\\Log\\": "src/log/src/",
+        "Src\\Alias\\": "src/alias/src/",
+        "Src\\Database\\": "src/database/src/",
+        "Src\\Dispatcher\\": "src/dispatcher/src/",
+        "Src\\Event\\": "src/event/src/",
+        "Src\\Helper\\": "src/helper/src/",
+        "Src\\Middleware\\": "src/middleware/src/",
+        "Src\\Pool\\": "src/pool/src/",
+        "Src\\Redis\\": "src/redis/src/",
+        "Src\\RPC\\": "src/rpc/src/",
+        "Src\\RPCClient\\": "src/rpc-client/src/",
+        "Src\\RPCServer\\": "src/rpc-server/src/",
+        "Src\\ServerEvent\\": "src/server-event/src/"
       },
       "files": [
         "src/framework/src/helpers.php"

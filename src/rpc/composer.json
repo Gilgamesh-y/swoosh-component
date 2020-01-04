@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Src\\Rpc\\": "src/"
+          "Src\\RPC\\": "src/"
         }
     }
 }
