@@ -21,7 +21,7 @@
     },
     "autoload": {
       "psr-4": {
-        "Src\\": "src/framework/src"
+        "Src\\": "src/framework/src/"
       },
       "files": [
         "src/framework/src/helpers.php"
