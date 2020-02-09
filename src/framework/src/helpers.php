@@ -310,3 +310,10 @@ if (!function_exists('bin_to_str')) {
         return join('', $arr);
     }
 }
+
+if (!function_exists('event')) {
+    function event($event, $foo = null, $is_coroutine = false)
+    {
+        is_null($foo) ? App::get('event')->makeClassListener($event) : App::get('event')->listen($event, $foo, $is_coroutine);
+    }
+}

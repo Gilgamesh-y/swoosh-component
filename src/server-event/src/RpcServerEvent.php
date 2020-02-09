@@ -6,7 +6,6 @@ use Swoole\Server;
 
 class RpcServerEvent extends BaseServer
 {
-
     /**
      * Execute when receive
      *

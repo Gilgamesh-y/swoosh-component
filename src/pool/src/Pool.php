@@ -63,17 +63,13 @@ abstract class Pool implements PoolInterface
         swoole_timer_tick(env('DB_POOL_TIME_PICK', 6000), function () {
             if ($this->connections->length() > intval($this->max * 0.5)) {
                 $list = [];
-                while (true) {
-                    if (!$this->connections->isEmpty()) {
-                        $obj = $this->connections->pop($this->time_out);
-                        $last_used_time = $obj['last_used_time'];
-                        if ($this->count > $this->min && (time() - $last_used_time > $this->spareTime)) {//回收
-                            $this->count--;
-                        } else {
-                            array_push($list, $obj);
-                        }
+                if (!$this->connections->isEmpty()) {
+                    $obj = $this->connections->pop($this->time_out);
+                    $last_used_time = $obj['last_used_time'];
+                    if ($this->count > $this->min && (time() - $last_used_time > $this->spareTime)) {//回收
+                        $this->count--;
                     } else {
-                        break;
+                        array_push($list, $obj);
                     }
                 }
                 foreach ($list as $item) {

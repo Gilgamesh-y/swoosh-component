@@ -42,12 +42,8 @@ abstract class BaseServer
     {
         $kernel = new Kernel($this->app);
         $kernel->bootstrap();
-        if ($this->app->get('redis_pool')) {
-            $this->app->active('redis_pool');
-        }
-        if ($this->app->get('db_pool')) {
-            $this->app->active('db_pool');
-        }
+        $this->app->active('redis_pool');
+        $this->app->active('db_pool');
     }
 
     /**
